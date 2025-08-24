@@ -1,0 +1,11 @@
+01-webshop
+--
+
+
+create a html-css-js site for a webshop which sells e-books. Basic setup with header, footer, content area, with a grid of e-books and a details page which shows the details of a book. Shopping cart and the ability to add/remove things from it.
+
+
+02-backend
+--
+
+create a NodeJS+express+typescript backend that manages events. An event has a location, is hosted by someone, is connected to invites and invites are sent to users. Add sensible defaults for the fields.

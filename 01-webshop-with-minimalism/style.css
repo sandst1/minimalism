@@ -1,0 +1,37 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+footer {
+    padding: 10px;
+    border-top: 1px solid #ccc;
+    margin-top: 20px;
+}
+
+#book-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+.book {
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.book h3 {
+    margin: 0 0 10px 0;
+}
+
+.book p {
+    margin: 5px 0;
+}
+
+button {
+    padding: 5px 10px;
+    margin: 5px 0;
+}

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookStore - Premium E-Books</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-brand">
+                <h1><i class="fas fa-book"></i> BookStore</h1>
+            </div>
+            <nav class="nav-menu">
+                <a href="#" class="nav-link active" data-page="home">Home</a>
+                <a href="#" class="nav-link" data-page="books">Books</a>
+                <a href="#" class="nav-link" data-page="about">About</a>
+            </nav>
+            <div class="nav-actions">
+                <button class="cart-btn" id="cartBtn">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Home Page -->
+        <section id="homePage" class="page active">
+            <div class="hero">
+                <div class="container">
+                    <div class="hero-content">
+                        <h2>Discover Your Next Great Read</h2>
+                        <p>Premium collection of e-books across all genres. Download instantly and read anywhere.</p>
+                        <button class="cta-btn" onclick="showPage('books')">Browse Books</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="featured-section">
+                <div class="container">
+                    <h3>Featured Books</h3>
+                    <div class="book-grid" id="featuredBooks">
+                        <!-- Featured books will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Books Page -->
+        <section id="booksPage" class="page">
+            <div class="container">
+                <div class="page-header">
+                    <h2>All Books</h2>
+                    <div class="filters">
+                        <select id="categoryFilter">
+                            <option value="">All Categories</option>
+                            <option value="fiction">Fiction</option>
+                            <option value="non-fiction">Non-Fiction</option>
+                            <option value="science">Science</option>
+                            <option value="technology">Technology</option>
+                            <option value="business">Business</option>
+                        </select>
+                        <select id="sortFilter">
+                            <option value="title">Sort by Title</option>
+                            <option value="price">Sort by Price</option>
+                            <option value="rating">Sort by Rating</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="book-grid" id="allBooks">
+                    <!-- All books will be populated by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Book Details Page -->
+        <section id="bookDetailsPage" class="page">
+            <div class="container">
+                <button class="back-btn" onclick="showPage('books')">
+                    <i class="fas fa-arrow-left"></i> Back to Books
+                </button>
+                <div class="book-details" id="bookDetailsContent">
+                    <!-- Book details will be populated by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- About Page -->
+        <section id="aboutPage" class="page">
+            <div class="container">
+                <div class="about-content">
+                    <h2>About BookStore</h2>
+                    <p>We are passionate about bringing you the finest collection of e-books from around the world. Our curated selection spans multiple genres and includes both classic literature and contemporary works.</p>
+                    <div class="features">
+                        <div class="feature">
+                            <i class="fas fa-download"></i>
+                            <h4>Instant Download</h4>
+                            <p>Get your books immediately after purchase</p>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-mobile-alt"></i>
+                            <h4>Read Anywhere</h4>
+                            <p>Compatible with all devices and e-readers</p>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-shield-alt"></i>
+                            <h4>Secure Purchase</h4>
+                            <p>Your transactions are safe and protected</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Shopping Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Shopping Cart</h3>
+            <button class="close-cart" id="closeCart">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="cart-content" id="cartContent">
+            <!-- Cart items will be populated by JavaScript -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <strong>Total: $<span id="cartTotal">0.00</span></strong>
+            </div>
+            <button class="checkout-btn" id="checkoutBtn">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <!-- Overlay -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>BookStore</h4>
+                    <p>Your premier destination for quality e-books.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#" onclick="showPage('home')">Home</a></li>
+                        <li><a href="#" onclick="showPage('books')">Books</a></li>
+                        <li><a href="#" onclick="showPage('about')">About</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Returns</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 BookStore. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
